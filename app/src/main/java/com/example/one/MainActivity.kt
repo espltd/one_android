@@ -14,8 +14,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.one.databinding.ActivityMainBinding
-import org.json.JSONObject
 
 const val API_KEY = "18cb6f191b5c4e589ba151051240305";
 
@@ -42,8 +40,8 @@ class MainActivity : AppCompatActivity() {
             getText.setText("")
             getResult("$city")
         }else{
-            Log.d("info", "Не заполнено поле город!")
-            getText.setText("Не заполнено поле город!")
+            Log.d("info", getString(R.string.the_city_field_is_not_filled_in))
+            getText.setText(getString(R.string.the_city_field_is_not_filled_in))
         }
     }
 

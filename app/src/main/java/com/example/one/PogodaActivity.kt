@@ -2,7 +2,6 @@ package com.example.one
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.activity.enableEdgeToEdge
@@ -31,19 +30,32 @@ class PogodaActivity : AppCompatActivity() {
 
         val dataListView = findViewById<ListView>(R.id.dataListView)
 
+        //данные с по направлению ветра с api приходят латиницей, таким образом
+        //сделаем кириллическое обозначение ветра
+        val wind_dir = when (current.getString("wind_dir")) {
+            "N" -> getString(R.string.С)
+            "S" -> getString(R.string.Ю)
+            "W" -> getString(R.string.З)
+            "E" -> getString(R.string.В)
+            "NW" -> getString(R.string.СЗ)
+            "SW" -> getString(R.string.ЮЗ)
+            "NE" -> getString(R.string.СВ)
+            "SE" -> getString(R.string.ЮВ)
+            else -> ""
+        }
+
         val rowData = arrayOf(
-            "Регион: ${ location.getString("region") }",
-            "Страна: ${ location.getString("country") }",
-            "Время запроса: ${ location.getString("localtime") }",
-            "Температура: ${ current.getString("temp_c") } °C",
-            "Температура: ${ current.getString("temp_f") } °F",
-            "Скорость ветра: ${ current.getString("wind_mph") } м/с",
-            "Давление: ${ current.getString("pressure_in") }",
-            "Осадки (мм): ${ current.getString("precip_mm") }",
-            "Влажность: ${ current.getString("humidity") } %",
-            "Облачность: ${ current.getString("cloud") } %",
-            "По ощущениям: ${ current.getString("feelslike_c") } °C",
-            "Порыв ветра: ${ current.getString("gust_mph") } м/с"
+            getString(R.string.Region, location.getString("region")),
+            getString(R.string.Country, location.getString("country")),
+            getString(R.string.temperature_c, current.getString("temp_c")),
+            getString(R.string.wind_speed, current.getString("wind_kph")),
+            getString(R.string.wind_dir, wind_dir),
+            getString(R.string.pressure_mb, current.getString("pressure_mb")),
+            getString(R.string.precip_mm, current.getString("precip_mm")),
+            getString(R.string.humidity, current.getString("humidity")),
+            getString(R.string.cloud, current.getString("cloud")),
+            getString(R.string.feelslike_c, current.getString("feelslike_c")),
+            getString(R.string.gust_kph, current.getString("gust_kph"))
         )
 
         val adapter = ArrayAdapter(

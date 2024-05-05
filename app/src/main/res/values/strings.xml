@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">One</string>
+    <string name="Region">Регион: %1$s</string>
+    <string name="Country">Страна: %1$s</string>
+    <string name="get_weather_api">Получение погоды по API</string>
+    <string name="get_data">Получить данные</string>
+    <string name="enter_your_city">Введите ваш город...</string>
+    <string name="back">Назад</string>
+    <string name="temperature_c">Температура: %1$s °C</string>
+    <string name="wind_speed">Скорость ветра: %1$s км/ч</string>
+    <string name="pressure_mb">"Давление: %1$s мм рт. ст "</string>
+    <string name="wind_dir">Направление ветра: %1$s</string>
+    <string name="precip_mm">Осадки: %1$s мм</string>
+    <string name="humidity">Влажность: %1$s %%</string>
+    <string name="cloud">Облачность: %1$s %%</string>
+    <string name="feelslike_c">По ощущениям: %1$s °C</string>
+    <string name="gust_kph">Порыв ветра: %1$s км/ч</string>
+    <string name="С">С</string>
+    <string name="Ю">Ю</string>
+    <string name="З">З</string>
+    <string name="В">В</string>
+    <string name="СЗ">СЗ</string>
+    <string name="ЮЗ">ЮЗ</string>
+    <string name="СВ">СВ</string>
+    <string name="ЮВ">ЮВ</string>
+    <string name="the_city_field_is_not_filled_in">Не заполнено поле город!</string>
 </resources>
